@@ -91,7 +91,14 @@ abstract class Player {
     if (row >= 0 && row < 3 && col >= 0 && col < 3) {
       if (TicTacToe.board[row][col] == ' ') {
         return true;
+      } else {
+        // already iss cell pe move ho chuka hai
+        System.out.println("Blocked Move");
+        return false;
       }
+    } else {
+      // invalid cell pe move ho rha hai
+      System.out.println("Invalid Move!!");
     }
     return false;
   }
@@ -147,9 +154,9 @@ class AIPlayer extends Player {
 public class LaunchGame {
   public static void main(String[] args) {
     TicTacToe t = new TicTacToe();
-    HumanPlayer p1 = new HumanPlayer("Bob", 'x');
-    // HumanPlayer p2 = new HumanPlayer("Priya", 'O');
-    AIPlayer p2 = new AIPlayer("TAI", 'O');
+    HumanPlayer p1 = new HumanPlayer("Virat", 'x');
+    HumanPlayer p2 = new HumanPlayer("Aman", 'O');
+    // AIPlayer p2 = new AIPlayer("TAI", 'O');
     Player cp;
     cp = p1;
 
